@@ -16,6 +16,18 @@ import java.io.IOException;
 )
 public class runTest {
 
+    @AfterClass
+    public static void finish() throws IOException {
+        try{
+            System.out.println("Generando el Reporte");
+            String [] cmd={"cmd.exe","/c","npm run report"};
+            Runtime.getRuntime().exec(cmd);
+            System.out.println("Reporte Generado Correctamente");
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
 
 
 }
